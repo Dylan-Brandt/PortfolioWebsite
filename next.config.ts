@@ -33,6 +33,11 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "cdn.worldvectorlogo.com",
         pathname: "/**"
+      },
+      {
+        protocol: "https",
+        hostname: "techicons.dev",
+        pathname: "/**"
       }
     ]
   }

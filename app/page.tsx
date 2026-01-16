@@ -5,6 +5,7 @@ import { useIsVisible } from "@/utils/useIsVisible";
 import { useRef } from "react";
 import ContactForm from "@/components/ContactForm";
 import ProjectSummary from "@/components/ProjectSummary";
+import TypewriterTypo from "@/components/TypoTypewriter";
 
 const searchableFilingCabinetLogos = [
   { src: "https://icon.icepanel.io/AWS/svg/Machine-Learning/Textract.svg", alt: "AWS Textract logo" },
@@ -13,7 +14,7 @@ const searchableFilingCabinetLogos = [
   { src: "https://icon.icepanel.io/AWS/svg/Compute/Lambda.svg", alt: "AWS Lambda logo" },
   { src: "https://icon.icepanel.io/AWS/svg/Database/DynamoDB.svg", alt: "AWS DynamoDB logo" },
   { src: "https://icon.icepanel.io/AWS/svg/Front-End-Web-Mobile/Amplify.svg", alt: "AWS Amplify logo" },
-  { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/591px-Nextjs-logo.svg.png?20230404233503", alt: "NextJS logo", width: 120 },
+  { src: "https://icon.icepanel.io/Technology/png-shadow-512/Next.js.png", alt: "NextJS logo", width: 65 },
   { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Stripe_Logo%2C_revised_2016.svg/768px-Stripe_Logo%2C_revised_2016.svg.png?20240909030005", alt: "Stripe payment processing logo", width: 120 }
 ]
 
@@ -37,7 +38,7 @@ const fridgeWizardLogos = [
   { src: "https://icon.icepanel.io/AWS/svg/Front-End-Web-Mobile/Amplify.svg", alt: "AWS Amplify logo" },
   { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/ChatGPT-Logo.svg/250px-ChatGPT-Logo.svg.png", alt: "ChatGPT logo" },
   { src: "https://cdn.worldvectorlogo.com/logos/search-console-icon-2025-1.svg", alt: "Google Search Console logo" },
-  { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/591px-Nextjs-logo.svg.png?20230404233503", alt: "NextJS logo", width: 120 },
+  { src: "https://icon.icepanel.io/Technology/png-shadow-512/Next.js.png", alt: "NextJS logo", width: 65 },
 ]
 
 export default function Home() {
@@ -61,17 +62,17 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen items-center justify-center font-sans bg-white dark:bg-dark-green px-2">
-      <main className="flex min-h-screen w-full max-w-5xl font-dark-green dark:font-white transition-opacity flex-col items-center text-left justify-between lg:py-32 px-8 bg-white dark:bg-dark-green sm:items-start">
-        <div ref={titleRef} className={`flex flex-col ease-in mt-24 delay-400 duration-700 ${isTitleVisible ? "opacity-100" : "opacity-0"}`}>
+      <main className="flex min-h-screen w-full max-w-5xl font-dark-green dark:font-white transition-opacity flex-col items-center text-left justify-between lg:py-32 lg:mb-16 mb-48 px-8 bg-white dark:bg-dark-green sm:items-start">
+        <div ref={titleRef} className={`flex flex-col mt-24 w-full ease-in delay-400 duration-700 ${isTitleVisible ? "opacity-100" : "opacity-0"}`}>
           <h1 className="text-5xl">DB Software</h1>
-          <p>
+          <div>
             <br />
-            Hello, my name is Dylan. I'm a programmer.
+            <TypewriterTypo text={"\nHello, my name is Dylan. I'm a programmer."} />
             <br /><br />
             I have a passion for learning about technology and applying my skills to solve difficult problems. In my work I try to approach things with creativity, integrity, and diligence.
             <br /><br />
             I have a B.S. in Computer Engineering from the University of Minnesota. My professional experience is in backend application engineering with Ameriprise Financial, TCS, and Steris Corp. In my freetime I enjoy building various websites and apps.
-          </p>
+          </div>
           <div className="flex items-center justify-end space-x-4 mt-16 px-2">
             <ButtonLink href="/#work" text="My work" />
             <ButtonLink href="/#contact" text="Contact" />
@@ -104,7 +105,7 @@ export default function Home() {
         >
           <p>
             <br />
-            <b>Searchable Filing Cabinet</b> is a fully <b>serverless web application</b> that provides <b>text search</b> to your personal <b>document database</b>.
+            <b>Searchable Filing Cabinet</b> is a <b>serverless web application</b> that provides <b>text search</b> to your personal <b>document database</b>.
             <br /><br />
             This application was built for my dad, who is a land surveyor with organizational issues.
             When a client calls and asks for an old survey of their property, it is very time consuming to search multiple filing cabinets to find the right document.
@@ -131,7 +132,7 @@ export default function Home() {
         >
           <p>
             <br />
-            <b>SampleSequencer</b> is a <b>Web Application</b> for used to create <b>drum patterns</b>.
+            <b>SampleSequencer</b> is a <b>web application</b> for creating <b>drum beats</b>.
             <br /> <br />
             Users can sample sounds using their devices microphone, trim the audio, add a variety of digital effects, and then send the sample to the sequencer where it can be played back with any number of additional samples.
             <br /> <br />
@@ -178,7 +179,7 @@ export default function Home() {
             height: 50,
           }}
           title="Fridge Wizard"
-          link="https://x.com/EverydayParks"
+          link="https://fridge-wizard.com"
           logos={fridgeWizardLogos}
         >
           <p>

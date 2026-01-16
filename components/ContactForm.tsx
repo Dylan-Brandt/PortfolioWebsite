@@ -68,7 +68,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div ref={contactRef} id="contact" className={`prose prose-lg max-w-4xl mx-auto mt-64 flex flex-col ease-in delay-400 duration-700 ${isContactVisible ? "opacity-100" : "opacity-0"}`}>
+    <div ref={contactRef} id="contact" className={`prose prose-lg max-w-4xl mx-auto mt-32 flex flex-col ease-in delay-400 duration-700 ${isContactVisible ? "opacity-100" : "opacity-0"}`}>
       <h2 className="text-3xl text-white mb-6 text-left">
         Contact Me
       </h2>
