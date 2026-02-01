@@ -4,11 +4,11 @@ frontend:
     preBuild:
       commands:
         - npm ci
-        - echo "NEXT_PUBLIC_RECAPTCHA_SITE_KEY=$NEXT_PUBLIC_RECAPTCHA_SITE_KEY >> .env.production
-        - echo "RECAPTCHA_SECRET_KEY=$RECAPTCHA_SECRET_KEY >> .env.production
-        - echo "FROM_EMAIL_PASSWORD=$FROM_EMAIL_PASSWORD >> .env.production
-        - echo "FROM_EMAIL=$FROM_EMAIL >> .env.production
-        - echo "TO_EMAIL=$TO_EMAIL >> .env.production
+        - echo "NEXT_PUBLIC_RECAPTCHA_SITE_KEY=$NEXT_PUBLIC_RECAPTCHA_SITE_KEY" >> .env.production
+        - echo "RECAPTCHA_SECRET_KEY=$RECAPTCHA_SECRET_KEY" >> .env.production
+        - echo "FROM_EMAIL_PASSWORD=$FROM_EMAIL_PASSWORD" >> .env.production
+        - echo "FROM_EMAIL=$FROM_EMAIL" >> .env.production
+        - echo "TO_EMAIL=$TO_EMAIL" >> .env.production
     build:
       commands:
         - npm run build
