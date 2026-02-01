@@ -9,7 +9,7 @@ const googleSansCode = Google_Sans_Code({
 })
 
 export const metadata: Metadata = {
-  title: "DB on the Net",
+  title: "DB on the Web",
   description: "Personal website highlighting programming projects",
 };
 
