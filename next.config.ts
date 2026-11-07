@@ -26,17 +26,17 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "fridge-wizard.com",
-        pathname: "/**"
-      },
-      {
-        protocol: "https",
         hostname: "cdn.worldvectorlogo.com",
         pathname: "/**"
       },
       {
         protocol: "https",
         hostname: "techicons.dev",
+        pathname: "/**"
+      },
+      {
+        protocol: "https",
+        hostname: "wiki.postgresql.org",
         pathname: "/**"
       }
     ]

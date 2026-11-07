@@ -7,15 +7,14 @@ import ContactForm from "@/components/ContactForm";
 import ProjectSummary from "@/components/ProjectSummary";
 import TypewriterTypo from "@/components/TypoTypewriter";
 
-const searchableFilingCabinetLogos = [
-  { src: "https://icon.icepanel.io/AWS/svg/Machine-Learning/Textract.svg", alt: "AWS Textract logo" },
-  { src: "https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/Cognito.svg", alt: "AWS Cognito logo" },
-  { src: "https://icon.icepanel.io/AWS/svg/Storage/Simple-Storage-Service.svg", alt: "AWS S3 logo" },
-  { src: "https://icon.icepanel.io/AWS/svg/Compute/Lambda.svg", alt: "AWS Lambda logo" },
-  { src: "https://icon.icepanel.io/AWS/svg/Database/DynamoDB.svg", alt: "AWS DynamoDB logo" },
+const findMoreLakesLogos = [
   { src: "https://icon.icepanel.io/AWS/svg/Front-End-Web-Mobile/Amplify.svg", alt: "AWS Amplify logo" },
+  { src: "https://icon.icepanel.io/AWS/svg/Compute/Lambda.svg", alt: "AWS Lambda logo" },
   { src: "https://icon.icepanel.io/Technology/png-shadow-512/Next.js.png", alt: "NextJS logo", width: 65 },
-  { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Stripe_Logo%2C_revised_2016.svg/768px-Stripe_Logo%2C_revised_2016.svg.png?20240909030005", alt: "Stripe payment processing logo", width: 120 }
+  { src: "https://icon.icepanel.io/AWS/svg/Containers/Elastic-Container-Service.svg", alt: "AWS Elastic Container Service logo" },
+  { src: "https://icon.icepanel.io/AWS/svg/Database/RDS.svg", alt: "AWS RDS logo" },
+  { src: "https://wiki.postgresql.org/images/thumb/a/a4/PostgreSQL_logo.3colors.svg/174px-PostgreSQL_logo.3colors.svg.png", alt: "PostgreSQL logo" },
+  { src: "https://icon.icepanel.io/AWS/svg/Management-Governance/CloudFormation.svg", alt: "AWS Cloudformation logo" }
 ]
 
 const sampleSequencerLogos = [
@@ -25,6 +24,17 @@ const sampleSequencerLogos = [
   { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/330px-Node.js_logo.svg.png", alt: "NodeJS logo", width: 100 }
 ]
 
+const searchableFilingCabinetLogos = [
+  { src: "https://icon.icepanel.io/AWS/svg/Machine-Learning/Textract.svg", alt: "AWS Textract logo" },
+  { src: "https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/Cognito.svg", alt: "AWS Cognito logo" },
+  { src: "https://icon.icepanel.io/AWS/svg/Storage/Simple-Storage-Service.svg", alt: "AWS S3 logo" },
+  { src: "https://icon.icepanel.io/AWS/svg/Compute/Lambda.svg", alt: "AWS Lambda logo" },
+  { src: "https://icon.icepanel.io/AWS/svg/Database/DynamoDB.svg", alt: "AWS DynamoDB logo" },
+  { src: "https://icon.icepanel.io/AWS/svg/Front-End-Web-Mobile/Amplify.svg", alt: "AWS Amplify logo" },
+  { src: "https://icon.icepanel.io/Technology/png-shadow-512/Next.js.png", alt: "NextJS logo", width: 65 },
+  { src: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original", alt: "Stripe payment processing logo", width: 120 }
+]
+
 const randomPublicParkLogos = [
   { src: "https://user-images.githubusercontent.com/2752551/30405069-a7751fee-989e-11e7-9a58-f93f8e820bd1.png", alt: "Serverless Framework logo" },
   { src: "https://icon.icepanel.io/AWS/svg/Compute/Lambda.svg", alt: "AWS Lambda logo" },
@@ -32,13 +42,6 @@ const randomPublicParkLogos = [
   { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Google_Maps_icon_%282020%29.svg/500px-Google_Maps_icon_%282020%29.svg.png", alt: "Google Maps logo", width: 40 },
   { src: "https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/files/python-logo-only.svg", alt: "Python Logo" },
   { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/ChatGPT-Logo.svg/250px-ChatGPT-Logo.svg.png", alt: "ChatGPT logo" }
-]
-
-const fridgeWizardLogos = [
-  { src: "https://icon.icepanel.io/AWS/svg/Front-End-Web-Mobile/Amplify.svg", alt: "AWS Amplify logo" },
-  { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/ChatGPT-Logo.svg/250px-ChatGPT-Logo.svg.png", alt: "ChatGPT logo" },
-  { src: "https://cdn.worldvectorlogo.com/logos/search-console-icon-2025-1.svg", alt: "Google Search Console logo" },
-  { src: "https://icon.icepanel.io/Technology/png-shadow-512/Next.js.png", alt: "NextJS logo", width: 65 },
 ]
 
 export default function Home() {
@@ -51,14 +54,14 @@ export default function Home() {
   const searchableFilingCabinetRef = useRef(null);
   const isSearchableFilingCabinetVisible = useIsVisible(searchableFilingCabinetRef);
 
+  const findMoreLakesRef = useRef(null);
+  const isFindMoreLakesVisible = useIsVisible(findMoreLakesRef);
+
   const sampleSequencerRef = useRef(null);
   const isSampleSequencerVisible = useIsVisible(sampleSequencerRef);
 
   const randomPublicParkRef = useRef(null);
   const isRandomPublicParkVisible = useIsVisible(randomPublicParkRef);
-
-  const fridgeWizardRef = useRef(null);
-  const isFridgeWizardVisible = useIsVisible(fridgeWizardRef);
 
   return (
     <div className="flex min-h-screen items-center justify-center font-sans bg-white dark:bg-dark-green px-2">
@@ -91,30 +94,25 @@ export default function Home() {
         </div>
 
         <ProjectSummary
-          ref={searchableFilingCabinetRef}
-          isVisible={isSearchableFilingCabinetVisible}
+          ref={findMoreLakesRef}
+          isVisible={isFindMoreLakesVisible}
           profileImage={{
-            src: "/searchablefilingcabinet-logo.png",
-            alt: "Logo for the Searchable Filing Cabinet website",
-            width: 50,
-            height: 50,
+            src: "/findmorelakes-logo.png",
+            alt: "Logo for the Find More Lakes website",
+            width: 60,
+            height: 60,
           }}
-          title="Searchable Filing Cabinet"
-          link="https://searchablefilingcabinet.com"
-          logos={searchableFilingCabinetLogos}
-        >
-          <p>
-            <br />
-            <b>Searchable Filing Cabinet</b> is a <b>serverless web application</b> that provides <b>text search</b> to your personal <b>document database</b>.
-            <br /><br />
-            This application was built for my dad, who is a land surveyor with organizational issues.
-            When a client calls and asks for an old survey of their property, it is very time consuming to search multiple filing cabinets to find the right document.
-            Searchable Filing Cabinet provides a way to organize and easily retrieve these documents once they are digitized.
-            <br /> <br />
-            Searchable Filing Cabinet uses <b>Optical Character Recognition (OCR)</b> technology to extract text from <b>PDF, PNG, or JPG</b> files to create a correlation between the document and the text it contains.
-            For a surveyor, looking for any document pertaining to a particular address, year, or county, all that is required is a simple text search, and the application will retrieve all relevant documents.
-            <br /> <br />
-          </p>
+          title="Find More Lakes"
+          link="https://findmorelakes.dbitweb.com"
+          logos={findMoreLakesLogos} >
+            <p>
+              <br />
+              <b>Find More Lakes</b> is a <b>web application</b> which helps users discover lakes in Minnesota by presenting DNR lake data.
+              <br /> <br />
+              The site centralizes lake data from various sources and makes it easy for users to learn about different lakes. Other features include the Lake of the Day, Recently published lake surveys, and trophy catch tracking.
+              <br /> <br />
+              The website is built using several AWS services including AWS SAM for backend services, AWS Amplify for frontend hosting, AWS RDS for data store, AWS ECS for scheduled data scraping, and AWS Cloudformation for cloud infrastructure deployments.
+            </p>
         </ProjectSummary>
 
         <ProjectSummary
@@ -138,6 +136,33 @@ export default function Home() {
             <br /> <br />
             The website is written in native HTML and CSS, and uses NPM libraries for audio processing and playback.
             Wavesurfer.js visualizes a sound making it easy to trim the sample for sequencing, while Tone.js provides the core of the sequencer, allowing users to schedule sounds for playback and add digital effects.
+          </p>
+        </ProjectSummary>
+
+        <ProjectSummary
+          ref={searchableFilingCabinetRef}
+          isVisible={isSearchableFilingCabinetVisible}
+          profileImage={{
+            src: "/searchablefilingcabinet-logo.png",
+            alt: "Logo for the Searchable Filing Cabinet website",
+            width: 50,
+            height: 50,
+          }}
+          title="Searchable Filing Cabinet"
+          link="https://searchablefilingcabinet.dbitweb.com"
+          logos={searchableFilingCabinetLogos}
+        >
+          <p>
+            <br />
+            <b>Searchable Filing Cabinet</b> is a <b>serverless web application</b> that provides <b>text search</b> to your personal <b>document database</b>.
+            <br /><br />
+            This application was built for my dad, who is a land surveyor with organizational issues.
+            When a client calls and asks for an old survey of their property, it is very time consuming to search multiple filing cabinets to find the right document.
+            Searchable Filing Cabinet provides a way to organize and easily retrieve these documents once they are digitized.
+            <br /> <br />
+            Searchable Filing Cabinet uses <b>Optical Character Recognition (OCR)</b> technology to extract text from <b>PDF, PNG, or JPG</b> files to create a correlation between the document and the text it contains.
+            For a surveyor, looking for any document pertaining to a particular address, year, or county, all that is required is a simple text search, and the application will retrieve all relevant documents.
+            <br /> <br />
           </p>
         </ProjectSummary>
 
@@ -168,33 +193,6 @@ export default function Home() {
             A <b>Python</b> script was used scrape and process the Wikipedia synopses into chunks that fit into the 140 character limit of a tweet, with help from the OpenAI API to rewrite content where needed.
           </p>
         </ProjectSummary>
-
-        <ProjectSummary
-          ref={fridgeWizardRef}
-          isVisible={isFridgeWizardVisible}
-          profileImage={{
-            src: "https://fridge-wizard.com/_next/image?url=%2Fimages%2Flogo.png&w=640&q=75",
-            alt: "Fridge Wizard website logo",
-            width: 100,
-            height: 50,
-          }}
-          title="Fridge Wizard"
-          link="https://fridge-wizard.com"
-          logos={fridgeWizardLogos}
-        >
-          <p>
-            <br />
-            <b>Fridge Wizard</b> is an <b>AI Recipe Generator</b> built on top of <b>ChatGPT</b> that provides various workflows for generating recipe ideas.
-            <br /> <br />
-            One option is to use the <b>Single Ingredient Generator</b> to come up with a few recipes for a specific ingredient you are craving.
-            Another offering is the <b>Cocktail Pairing Generator</b>. Simply enter a recipe you have in mind and Fridge Wizard will generate you a cocktail that goes with it. Or do the opposite and enter a cocktail to generate a pairing recipe.
-            Lastly the <b>Meal Prep Generator</b> will generate a list of recipes as well as the grocery list given your budget, cuisine preference, dietary restrictions, etc.
-            <br /> <br />
-            Fridge Wizard was also an excercise in <b>Search Engine Optimization (SEO)</b>. The websites has a number of pages and blog posts which are written with key words to rank the site higher in search results.
-            <b> Google Search Console</b> and <b>Keyword Planner</b> were used to find a niche which Fridge Wizard could occupy in Google's search results, and dynamic sitemaps were added so that bots could crawl and rank the site.
-          </p>
-        </ProjectSummary>
-
         <ContactForm />
       </main>
     </div >
